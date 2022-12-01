@@ -7,6 +7,19 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    Function to process a given song file.
+    
+    Executes the queries to insert in the DB the song and the artist found in the song file.
+    
+    Parameters
+    ----------
+    cur : Object
+        Cursor to PostgreSQL database.
+    filepath : str
+        Path to the file which has to be examinated. 
+    
+    """
     # open song file
     df = pd.read_json(filepath, lines=True).replace({np.nan: None})
     
@@ -23,6 +36,19 @@ def process_song_file(cur, filepath):
     cur.execute(artist_table_insert, artist_data)
 
 def process_log_file(cur, filepath):
+    """
+    Function to process a given log file.
+    
+    Executes the queries to insert records in the time, users and songplay tables.
+    
+    Parameters
+    ----------
+    cur : Object
+        Cursor to PostgreSQL database.
+    filepath : str
+        Path to the file which has to be examinated. 
+    
+    """
     # open log file
     df = pd.read_json(filepath, lines=True).replace({np.nan: None})
 
@@ -73,6 +99,25 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    
+    """
+    Function which coordinates the etl pipeline.
+    
+    Examines the folders looking for log and song data and makes the corresponding calls to the functions which read those files.
+    
+    Parameters
+    ----------
+    cur : Object
+        Cursor to PostgreSQL database.
+    conn: Object
+        Connection to the PostgreSQL database
+    filepath : str
+        Path to the file which has to be examinated. 
+    func: Object
+        Function to be called. Either the one corresponding to the song or to the log files.
+    
+    """
+    
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
@@ -92,6 +137,12 @@ def process_data(cur, conn, filepath, func):
 
 
 def main():
+    """
+    Main function.
+    
+    Creates a connection to the database and calls the functions to process the data.
+    
+    """
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
 
