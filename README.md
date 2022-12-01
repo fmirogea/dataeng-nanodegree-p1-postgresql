@@ -18,7 +18,7 @@ An explanation of the files in the repository:
 State and justify your database schema design and ETL pipeline.
 
 Picture of the data model:
-![data model](/media/Project1_DataModellingPostgreSQL-Data Model.drawio.png)
+![data model](/media/Project1_DataModellingPostgreSQL-Data-Model.drawio.png)
 
 Picture of the ETL pipeline:
 ![ETL Pipeline](/media/Project1_DataModellingPostgreSQL-ETL.drawio.png)

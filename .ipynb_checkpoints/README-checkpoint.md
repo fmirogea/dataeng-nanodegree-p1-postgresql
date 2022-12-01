@@ -8,17 +8,17 @@ Discuss the purpose of this database in the context of the startup, Sparkify, an
 ## Running the scripts
 How to run the Python scripts:
 
-Run create_tables.py to create your database and tables.
-Run etl.py to run the ETL pipeline.
+Run `create_tables.py` to create your database and tables.
+Run `etl.py` to run the ETL pipeline.
 
 ## File descriptions
-An explanation of the files in the repository
+An explanation of the files in the repository:
 
 ## Database schema and ETL pipeline design
 State and justify your database schema design and ETL pipeline.
 
 Picture of the data model:
-![data model](/media/Project1_DataModellingPostgreSQL-Data Model.drawio.png)
+![data model](/media/Project1_DataModellingPostgreSQL-Data-Model.drawio.png)
 
 Picture of the ETL pipeline:
 ![ETL Pipeline](/media/Project1_DataModellingPostgreSQL-ETL.drawio.png)
