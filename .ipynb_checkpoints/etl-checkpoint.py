@@ -91,10 +91,10 @@ def process_log_file(cur, filepath):
         else:
             songid, artistid = None, None
 
-        songplayid = str(row.sessionId) + str(row.itemInSession)
+        #songplayid = str(row.sessionId) + str(row.itemInSession)
         
         # insert songplay record
-        songplay_data = (songplayid, row.start_time, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
+        songplay_data = (row.start_time, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
 

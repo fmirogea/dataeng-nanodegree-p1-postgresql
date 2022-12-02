@@ -25,6 +25,7 @@ Different files and folders can be found in the repository:
 - The `etl.py` script contains the code necessary for running the pipeline.
 - The `etl.ipynb` Notebook was used for coding in an interactive way the `etl.py` script.
 - The `test.ipynb` Notebook includes some SQL queries for debugging i.e. testing the content of the tables at any time.
+- The `er_generator.py` script contains the code necessary for generating the entity relation diagram.
 
 
 ## Database schema and ETL pipeline design
@@ -37,7 +38,7 @@ The data has been modeled using a star schema, which consists of one or more fac
 A characteristic of using fact and dimensional tables is that a unique primary key for each dimension table is included in the fact table. 
 
 The following image shows the relationship between the fact and dimension tables:
-![data model](/media/Project1_DataModellingPostgreSQL-Data-Model.drawio.png)
+![data model](/media/sparkifydb_erd.png)
 
 Star Schemas are a form of denormalized data modelling and have a number of benefits:
 
